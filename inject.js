@@ -113,7 +113,7 @@
       const [input, init] = args;
       const url = typeof input === "string" ? input : input.url;
 
-      if (url.includes("api.openai.com") || url.includes("chatgpt.com/backend-api")) {
+      if (url.includes("api.openai.com") || url.includes("chatgpt.com/backend-api/f/conversation") && !url.includes("chatgpt.com/backend-api/f/conversation/prepare")) {
         const bodyPreview =
           init?.body && typeof init.body === "string"
             ? init.body.slice(0, 1500)
@@ -145,7 +145,7 @@
     XMLHttpRequest.prototype.send = function (body) {
       if (
         this._url &&
-        (this._url.includes("api.openai.com") || this._url.includes("chatgpt.com/backend-api"))
+        (this._url.includes("api.openai.com") || this._url.includes("chatgpt.com/backend-api/f/conversation"))
       ) {
         const bodyPreview =
           typeof body === "string" ? body.slice(0, 1500) : body ? "[binary body]" : null;
