@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurações - ChatGPT Interceptor</title>
+
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --accent: #4f46e5;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      background: #374151;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    input:focus {
+      outline: 2px solid var(--accent);
+    }
+
+    button {
+      margin-top: 20px;
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .stats {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: #2d3748;
+      margin: 25px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>⚙️ ChatGPT Interceptor</h1>
+
+    <label for="server-url">Servidor de destino (SERVER_URL)</label>
+    <input type="text" id="server-url" placeholder="http://localhost:5000/api/chatgpt-intercept" />
+
+    <button id="save">💾 Salvar configurações</button>
+
+    <div class="divider"></div>
+
+    <div class="stats">
+      <p><strong>📡 Logs armazenados:</strong> <span id="log-count">0</span></p>
+      <button id="clear-logs" style="background:#ef4444;">🗑️ Limpar logs locais</button>
+    </div>
+
+    <div class="footer">
+      Desenvolvido por <strong>VORTEX ⚡</strong> — versão <span id="version">1.2.0</span>
+    </div>
+  </div>
+
+  <!-- ✅ Move o script inline pra um arquivo externo -->
+  <script src="options.js"></script>
+</body>
+</html>
